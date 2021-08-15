@@ -124,9 +124,10 @@ calcular_intervalo_de_confianca_media <- function(resultados, p) {
 
 teste = testar(100, 'a', 1000)
 
-print(calcular_intervalo_de_confianca_media(teste[,1], 0.95))
-print(calcular_intervalo_de_confianca_media(teste[,2], 0.95))
-print(calcular_intervalo_de_confianca_media(teste[,3], 0.95))
-print(calcular_intervalo_de_confianca_media(teste[,4], 0.95))
-print(calcular_intervalo_de_confianca_media(teste[,5], 0.95))
-print(calcular_intervalo_de_confianca_media(teste[,6], 0.95))
+
+cat("Intervalo de confiança para o número de passos no estado a:",calcular_intervalo_de_confianca_media(teste[,1], 0.95),"\n")
+cat("Intervalo de confiança para o número de passos no estado b:",calcular_intervalo_de_confianca_media(teste[,2], 0.95),"\n")
+cat("Intervalo de confiança para o número de passos no estado c:",calcular_intervalo_de_confianca_media(teste[,3], 0.95),"\n")
+cat("Intervalo de confiança para o número de passos no estado d:",calcular_intervalo_de_confianca_media(teste[,4], 0.95),"\n")
+cat("Intervalo de confiança para o número de passos no estado e:",calcular_intervalo_de_confianca_media(teste[,5], 0.95),"\n")
+cat("Intervalo de confiança para o número de passos no estado f:",calcular_intervalo_de_confianca_media(teste[,6], 0.95),"\n")
