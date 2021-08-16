@@ -1,6 +1,7 @@
 
 #Função para encontrar a matriz de transição da Cadeia de Markov tempo reversa.
 reversal <- function(mat){
+    mat <- t(mat)
     size <- dim(mat)
     eigen <- eigen(mat)
     st_v <- eigen$vectors[,which.max(eigen$values)]
