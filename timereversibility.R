@@ -8,7 +8,7 @@ reversal <- function(mat){
     st_v <- st_v/sum(st_v)
     reverse <- matrix(1:size[1]*size[1], size[1], size[2])
     for (i in 1:size[1]){
-        co = c()
+        co <- c()
         for(j in 1:size[2]){
             co <- c(co, (st_v[j]*mat[i, j])/st_v[i])
         }
