@@ -1,20 +1,19 @@
 metropolis_hastings_binomial <- function(initial_state, steps, p, n) {
-  i <- initial_state
-  states <- c(i)
-  
-  for(s in 1:steps) {
-    p <- runif(1, 0, 1)
-    j <- sample(c(0:n),1)
+  state <- initial_state
+
+  states <- c()
+  for(i in 1:steps) {
+    y <- sample(0:n,1)
     
-    if(p < ((factorial(i)*factorial(n - i))/(factorial(j)*factorial(n - j)))*((p/(1-p))^(j - i))){
-      i <- j
-    }
+    acc <- factorial(state)*factorial(n-state)/(factorial(y)*factorial(n-y)) * (p/(1-p))^(y-state)
     
-    states <- c(states, i)
+    if(runif(1) < acc) state <- y
+    states <- c(states, state)
   }
+  
   return(states)
 }
 
-r <- metropolis_hastings_binomial(0, 100000, 0.5, 10)
+r <- metropolis_hastings_binomial(0, 120000, 1/4, 50)
 
-sum(r == 5)/length(r)
+mean(r>=10 & r<=15)
