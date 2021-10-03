@@ -25,5 +25,5 @@ calcular_intervalo_de_confianca_media <- function(resultados, p) {
   return(intervalo_confianca)
 }
 
-cat("Intervalo de confiança para a probabilidade de extinção na centésima geração:", calcular_intervalo_de_confianca_media(testep1, 0.95))
-cat("Intervalo de confiança para a probabilidade de extinção na centésima geração:", calcular_intervalo_de_confianca_media(testep2, 0.95))
+cat("Intervalo de confiança para a probabilidade de Tom ter terminado a prova após 45 minutos:", calcular_intervalo_de_confianca_media(testep1, 0.95))
+cat("Intervalo de confiança para a probabilidade de após 45 minutos Tom ainda estar na terceira questão:.", calcular_intervalo_de_confianca_media(testep2, 0.95))
